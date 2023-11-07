@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Management{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Contact Details</h1>
+    <p class="mt-4"><strong>Name:</strong> {{ contact.name }}</p>
+    <p><strong>Email:</strong> {{ contact.email }}</p>
+    <p><strong>Notes:</strong> {{ contact.notes }}</p>
+    <p><strong>Created Time:</strong> {{ contact.created_time }}</p>
+    <a class="btn btn-secondary" href="{% url 'contact_list' %}">Home</a>
+    <a class="btn btn-primary" href="{% url 'contact_update' contact.pk %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'contact_delete' contact.pk %}">Delete</a>
+</div>
+{% endblock %}
