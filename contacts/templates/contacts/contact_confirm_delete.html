@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Management{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Confirm Delete</h1>
+    <p class="mt-4">Are you sure you want to delete "{{ contact.name }}"?</p>
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+        <a class="btn btn-secondary" href="{% url 'contact_list' %}">Cancel</a>
+    </form>
+    
+</div>
+{% endblock %}
